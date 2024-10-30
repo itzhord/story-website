@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GOOGLE_API } from '$env/static/private';
 
 const genAI = new GoogleGenerativeAI(GOOGLE_API);
-const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
 const prompt = "Write a story about a magic backpack.";
 

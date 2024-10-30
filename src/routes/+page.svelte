@@ -124,7 +124,14 @@
   </div>
 </div>
 <!-- end of story generator -->
-
+<!-- Load indicator function -->
+<div class="flex relative items-center justify-center">
+  {#if isLoading}
+    <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 border-blue-500 rounded-full opacity-75 mr-2">🌀</div>
+    <h2 class="font-bold">Your Story is Loading</h2>
+  {/if}
+</div>
+<!-- End of load indicator function -->
 <!-- Carousel -->
 <!-- <div class="flex flex-row items-center justify-center gap-[6rem]">
   <button class="relative left-[4rem]" on:click={prev}><img class="w-[6rem]" src="src/lib/left.png"></button>
@@ -171,14 +178,7 @@
   
 </div>
 
-<!-- Load indicator function -->
-<div class="flex items-center justify-center">
-  {#if isLoading}
-    <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 border-blue-500 rounded-full opacity-75 mr-2">🌀</div>
-    <h2 class="font-bold">Your Story is Loading</h2>
-  {/if}
-</div>
-<!-- End of load indicator function -->
+
 
 <!-- Errror handling for request -->
 {#if showAlert}
