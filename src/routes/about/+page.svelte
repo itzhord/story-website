@@ -1,26 +1,24 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script lang="ts">
+	import { enhance } from '$app/forms';
+    import type { PageData } from './$types';
+    
+    	/** @type {import('./$types').ActionData} */
+	export let form;
+    
+    export let data: PageData;
+    console.log(data)
+</script>
 
-<div class="text-column">
-	<h1>About this app</h1>
 
-	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
-	</p>
+<h1>Simple GET Request Form</h1>
+    <form method="POST" use:enhance>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
 
-	<pre>npx sv create</pre>
+        <button type="submit">Submit</button>
+    </form>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+    <h3>{form.info}</h3>
