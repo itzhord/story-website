@@ -3,9 +3,12 @@
   import { afterUpdate } from "svelte";
   import type { PageData, ActionData, SubmitFunction } from './$types';
   import { Button } from "$lib/components/ui/button/index.js";
+  import Banner from "$lib/storytelling-4203628_1920-removebg-preview.png"
 
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
+
+  import {items} from './data'
 
   let isLoading = false;
   
@@ -44,33 +47,7 @@
     // Hide the load spinner
   };
 
-//Carousel
-  let items = [
-    {
-      image: 'src/lib/image1.png',
-      testimony: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque officiis voluptates ipsam maiores nesciunt. Molestiae illum repellat ratione animi, excepturi nesciunt et dicta quibusdam possimus perspiciatis accusantium adipisci sunt facilis commodi quos, fugiat vero quaerat odit aliquam. Recusandae explicabo in veniam earum ut odit dolor possimus laboriosam omnis tempora.',
-      name:'Tim Philip',
-      speaker: 'C.E.O'
-    },
-    {
-      image: 'src/lib/image2.png',
-      testimony: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque officiis voluptates ipsam maiores nesciunt. Molestiae illum repellat ratione animi, excepturi nesciunt et dicta quibusdam possimus perspiciatis accusantium adipisci sunt facilis commodi quos, fugiat vero quaerat odit aliquam. Recusandae explicabo in veniam earum ut odit dolor possimus laboriosam omnis tempora.',
-      name:'Jonathan Queue',
-      speaker: 'Creative'
-    },
-    {
-      image: 'src/lib/image3.png',
-      testimony: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque officiis voluptates ipsam maiores nesciunt. Molestiae illum repellat ratione animi, excepturi nesciunt et dicta quibusdam possimus perspiciatis accusantium adipisci sunt facilis commodi quos, fugiat vero quaerat odit aliquam. Recusandae explicabo in veniam earum ut odit dolor possimus laboriosam omnis tempora.',
-      name:'Anal Woods',
-      speaker: 'Editor'
-    },
-    {
-      image: 'src/lib/image4.png',
-      testimony: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eaque officiis voluptates ipsam maiores nesciunt. Molestiae illum repellat ratione animi, excepturi nesciunt et dicta quibusdam possimus perspiciatis accusantium adipisci sunt facilis commodi quos, fugiat vero quaerat odit aliquam. Recusandae explicabo in veniam earum ut odit dolor possimus laboriosam omnis tempora.',
-      name:'Rope Fineman',
-      speaker: 'Star User'
-    }
-  ];
+
   let currentIndex = 0;
 
   function next() {
@@ -113,7 +90,7 @@
 <div class="w-100 h-[80vh] bg-gradient-to-r from-emerald-500 to-emerald-900">
   <h1  class=" relative text-[4.5rem] text-white font-bold text-center top-[3.2rem]">HotStuff</h1>
   <h1 class="text-[3rem] text-white font-bold text-center mt-7 ">Story Maker</h1>
-  <img class="mx-auto w-[50rem] relative bottom-[3rem] " src="src/lib/storytelling-4203628_1920-removebg-preview.png" alt="Description of the image">
+  <img class="mx-auto w-[50rem] relative bottom-[3rem] " src={Banner} alt="Description of Banner"/>
 </div>
 
 <!-- end of banner screen -->
@@ -149,12 +126,12 @@
 <!-- end of story generator -->
 
 <!-- Carousel -->
-<div class="flex flex-row items-center justify-center gap-[6rem]">
+<!-- <div class="flex flex-row items-center justify-center gap-[6rem]">
   <button class="relative left-[4rem]" on:click={prev}><img class="w-[6rem]" src="src/lib/left.png"></button>
   <div class="flex gap-[3rem] ">
     {#each items.slice(currentIndex, currentIndex + 2) as item}
       <div class=" flex flex-row gap-5 w-[80%] h-[30%] bg-emerald-100 rounded-2xl ">
-        <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel image" />
+        <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
         <div class="flex flex-col text-[0.7rem] p-[1.2rem] ">
           <p class="text-left">{item.testimony}</p>
           <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
@@ -164,8 +141,35 @@
     {/each}
   </div>
   <button class="relative right-[4rem]" on:click={next}><img class="w-[6rem]" src="src/lib/right.png"></button>
-</div>
+</div> -->
 <!-- ENd of Carousel -->
+
+<div class=" flex items-center justify-center my-4">
+  <Carousel.Root class="px-20 w-[80rem]  ">
+    <Carousel.Content>
+      {#each items as item, i (i)}
+        <Carousel.Item class="md:basis-1/2 lg:basis-1/2">
+         
+            <Card.Root>
+              <Card.Content
+                class="flex  items-center justify-center p-6"
+              >
+              <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
+              <div class="flex flex-col text-[0.7rem] p-[1.2rem] ">
+                <p class="text-left">{item.testimony}</p>
+                <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
+                <p class="text-left text-pink-700">{item.speaker}</p>
+              </div>
+              </Card.Content>
+            </Card.Root>
+        </Carousel.Item>
+      {/each}
+    </Carousel.Content>
+    <Carousel.Previous />
+    <Carousel.Next />
+  </Carousel.Root>
+  
+</div>
 
 <!-- Load indicator function -->
 <div class="flex items-center justify-center">
