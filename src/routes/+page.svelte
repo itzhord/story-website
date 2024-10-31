@@ -74,7 +74,7 @@
 </script>
 
 <!-- nav bar -->
-<nav class="bg-[#1e272e] py-2 px-6 fixed w-full top-0 z-10">
+<nav class="bg-[#1e272e] py-2 px-6 font-sans fixed w-full  top-0 z-10">
   <div class="container mx-auto flex items-center justify-between">
     <a href="/" class="text-white text-2xl font-bold">HotStuff</a>
     <ul class="flex space-x-6">
@@ -99,13 +99,13 @@
 <!-- end of nav bar -->
 
 <!-- Banner Screen -->
-<div class="w-100 h-[80vh] bg-[#1e272e]">
+<div class="w-100 h-[80vh] font-mono bg-[#1e272e]">
   <h1  class=" relative text-[2rem] text-white font-bold text-center top-[5.2rem]">HotStuff</h1>
   <h1 class="text-[2rem] text-white font-bold text-center relative top-[2rem] mt-7 ">Story Maker</h1>
   <!-- <img class="mx-auto w-[50rem] relative bottom-[3rem] " src={Banner} alt="Description of Banner"/> -->
 
-  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[1.9rem] mt-7 " > The #1 Story Maker</h2>
-  <h2 class="text-[4.5rem] text-white font-bold text-center relative bottom-[1rem] "> For Readers in the entire space</h2>
+  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
+  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
   <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your center for innoavtive stories</h2>
 </div>
 

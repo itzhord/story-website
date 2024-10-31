@@ -67,7 +67,8 @@ const config: Config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
+				sans: ['Poppins', ...fontFamily.sans],
+				mono: ['Lexend Deca'],
 			},
 			keyframes: {
 				"accordion-down": {
