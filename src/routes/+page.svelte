@@ -2,9 +2,10 @@
   import { enhance } from '$app/forms';
   import { afterUpdate } from "svelte";
   import type { PageData, ActionData, SubmitFunction } from './$types';
-  import { Button } from "$lib/components/ui/button/index.js";
+  
   import Banner from "$lib/storytelling-4203628_1920-removebg-preview.png"
-
+ import { Button } from "$lib/components/ui/button/index.js";
+  import { Input } from "$lib/components/ui/input/index.js"
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
 
@@ -199,18 +200,57 @@
 
 
 <footer class="bg-gray-800 text-white py-4 mt-16">
-  <div class="container mx-auto flex flex-col items-center justify-between md:flex-row">
+
+  <form class="flex w-full max-w-sm items-center my-[1rem] space-x-2 m-auto">
+    <Input class="text-black" type="email" placeholder="email" />
+    <Button type="submit">Subscribe</Button>
+  </form>
+  <div class="container mx-auto text-[0.9rem] grid mt-10 grid-cols-1 md:grid-cols-4 gap-8">
     <div class="mb-4 md:mb-0">
       <a href="/" class="text-xl font-bold">HotStuff</a>
       <p class="text-sm mt-2">Your go-to source for creative stories.</p>
+
+      <div class="flex space-x-4 mt-4"> 
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-facebook-f"></i> 
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-twitter"></i> 
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white">
+          <i class="fab fa-instagram"></i> 
+        </a>
+      </div>
     </div>
-    <div class="flex space-x-4">
-      <a href="/" class="hover:text-gray-300">Home</a>
-      <a href="/about" class="hover:text-gray-300">About</a>
-      <a href="/contact" class="hover:text-gray-300">Contact</a>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="/" class="hover:text-gray-300">Home</a></li>
+        <li><a href="/latest" class="hover:text-gray-300">Latest</a></li>
+        <li><a href="/about" class="hover:text-gray-300">About</a></li>
+        <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Explore</h3>
+      <ul class="space-y-2">
+        <li><a href="/genres" class="hover:text-gray-300">Genres</a></li>
+        <li><a href="/authors" class="hover:text-gray-300">Authors</a></li>
+        <li><a href="/collections" class="hover:text-gray-300">Collections</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Legal</h3>
+      <ul class="space-y-2">
+        <li><a href="/terms" class="hover:text-gray-300">Terms of Service</a></li>
+        <li><a href="/privacy" class="hover:text-gray-300">Privacy Policy</a></li>
+      </ul>
     </div>
   </div>
+
+  <p class="text-center text-sm mt-[1rem]">© Copyright 2019-{new Date().getFullYear()} HotStuff</p>
 </footer>
+
 <!-- End of footer -->
 
 <!-- <Typewriter>
