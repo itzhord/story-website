@@ -8,6 +8,8 @@
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
 
+  
+
   import {items} from './data'
 
   let isLoading = false;
@@ -47,17 +49,26 @@
     // Hide the load spinner
   };
 
-
-  let currentIndex = 0;
-
-  function next() {
-    currentIndex = (currentIndex + 1) % items.length;
-  }
-
-  function prev() {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-  }
-
+  const downloadStory = async () => {
+    if (form?.result) {
+      try {
+        const storyText = typeof form?.result === 'string' ? form?.result : await form?.result;
+        const file = new Blob([storyText], { type: 'text/plain' });
+        const element = document.createElement('a');
+        element.href = URL.createObjectURL(file);
+        element.download = 'my_story.txt';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element); // Clean up
+      } catch (error) {
+        console.error("Error downloading story:", error);
+        // Handle the error, e.g., show an error message to the user
+      }
+    } else {
+      console.error("No story to download");
+      // Handle the case where there's no story
+    }
+  };
   // Dropdown menu
 </script>
 
@@ -117,10 +128,17 @@
       >
         Generate Story
       </Button>
+
     </form>
     <div id="story-output" class="mt-4 border rounded p-4 bg-white shadow-md">
       {form?.result}
     </div>
+    {#if form?.result} 
+    <button on:click={downloadStory} class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      Download Story
+    </button>
+  {/if}
+
   </div>
 </div>
 <!-- end of story generator -->
@@ -132,24 +150,6 @@
   {/if}
 </div>
 <!-- End of load indicator function -->
-<!-- Carousel -->
-<!-- <div class="flex flex-row items-center justify-center gap-[6rem]">
-  <button class="relative left-[4rem]" on:click={prev}><img class="w-[6rem]" src="src/lib/left.png"></button>
-  <div class="flex gap-[3rem] ">
-    {#each items.slice(currentIndex, currentIndex + 2) as item}
-      <div class=" flex flex-row gap-5 w-[80%] h-[30%] bg-emerald-100 rounded-2xl ">
-        <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
-        <div class="flex flex-col text-[0.7rem] p-[1.2rem] ">
-          <p class="text-left">{item.testimony}</p>
-          <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
-          <p class="text-left text-pink-700">{item.speaker}</p>
-        </div>
-      </div>
-    {/each}
-  </div>
-  <button class="relative right-[4rem]" on:click={next}><img class="w-[6rem]" src="src/lib/right.png"></button>
-</div> -->
-<!-- ENd of Carousel -->
 
 <div class=" flex items-center justify-center my-4">
   <Carousel.Root class="px-20 w-[80rem]  ">
