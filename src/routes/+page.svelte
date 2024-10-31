@@ -73,7 +73,7 @@
 </script>
 
 <!-- nav bar -->
-<nav class="bg-gradient-to-r from-emerald-500 to-emerald-900 py-2 px-6 fixed w-full top-0 z-10">
+<nav class="bg-[#1e272e] py-2 px-6 fixed w-full top-0 z-10">
   <div class="container mx-auto flex items-center justify-between">
     <a href="/" class="text-white text-2xl font-bold">HotStuff</a>
     <ul class="flex space-x-6">
@@ -83,9 +83,9 @@
         <button class="text-gray-300 hover:text-white flex items-center">
           Latest 
         </button>
-        <ul class="hidden group-hover:block absolute bg-emerald-700 text-white py-2 rounded-md shadow-md">
-          <li><a href="/latest/option1" class="block px-4 py-2 hover:bg-emerald-800">Journals</a></li>
-          <li><a href="/latest/option2" class="block px-4 py-2 hover:bg-emerald-800">Series</a></li>
+        <ul class="hidden group-hover:block absolute bg-[#535c68] text-white py-2 rounded-md shadow-md">
+          <li><a href="/latest/option1" class="block px-4 py-2 hover:bg-[#95a5a6]">Journals</a></li>
+          <li><a href="/latest/option2" class="block px-4 py-2 hover:bg-[#95a5a6]">Series</a></li>
         </ul>
       </li>
 
@@ -98,10 +98,14 @@
 <!-- end of nav bar -->
 
 <!-- Banner Screen -->
-<div class="w-100 h-[80vh] bg-gradient-to-r from-emerald-500 to-emerald-900">
-  <h1  class=" relative text-[4.5rem] text-white font-bold text-center top-[3.2rem]">HotStuff</h1>
-  <h1 class="text-[3rem] text-white font-bold text-center mt-7 ">Story Maker</h1>
-  <img class="mx-auto w-[50rem] relative bottom-[3rem] " src={Banner} alt="Description of Banner"/>
+<div class="w-100 h-[80vh] bg-[#1e272e]">
+  <h1  class=" relative text-[2rem] text-white font-bold text-center top-[5.2rem]">HotStuff</h1>
+  <h1 class="text-[2rem] text-white font-bold text-center relative top-[2rem] mt-7 ">Story Maker</h1>
+  <!-- <img class="mx-auto w-[50rem] relative bottom-[3rem] " src={Banner} alt="Description of Banner"/> -->
+
+  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[1.9rem] mt-7 " > The #1 Story Maker</h2>
+  <h2 class="text-[4.5rem] text-white font-bold text-center relative bottom-[1rem] "> For Readers in the entire space</h2>
+  <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your center for innoavtive stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -134,7 +138,7 @@
       {form?.result}
     </div>
     {#if form?.result} 
-    <button on:click={downloadStory} class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+    <button on:click={downloadStory} class="bg-[#95a5a6] hover:bg-[#95a5a6] text-white font-bold py-2 px-4 rounded">
       Download Story
     </button>
   {/if}
