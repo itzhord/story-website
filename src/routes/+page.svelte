@@ -73,30 +73,6 @@
   // Dropdown menu
 </script>
 
-<!-- nav bar -->
-<nav class="bg-[#1e272e] py-2 px-6 font-sans fixed w-full  top-0 z-10">
-  <div class="container mx-auto flex items-center justify-between">
-    <a href="/" class="text-white text-2xl font-bold">HotStuff</a>
-    <ul class="flex space-x-6">
-      <li><a href="/" class="text-gray-300 hover:text-white">Home</a></li>
-
-      <li class="relative group"> 
-        <button class="text-gray-300 hover:text-white flex items-center">
-          Latest 
-        </button>
-        <ul class="hidden group-hover:block absolute bg-[#535c68] text-white py-2 rounded-md shadow-md">
-          <li><a href="/latest/option1" class="block px-4 py-2 hover:bg-[#95a5a6]">Journals</a></li>
-          <li><a href="/latest/option2" class="block px-4 py-2 hover:bg-[#95a5a6]">Series</a></li>
-        </ul>
-      </li>
-
-      <li><a href="/about" class="text-gray-300 hover:text-white">About</a></li>
-      <li><a href="/contact" class="text-gray-300 hover:text-white">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- end of nav bar -->
 
 <!-- Banner Screen -->
 <div class="w-100 h-[80vh] font-mono bg-[#1e272e]">
@@ -106,7 +82,7 @@
 
   <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
   <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
-  <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your center for innoavtive stories</h2>
+  <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your go-to source for creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -147,6 +123,7 @@
   </div>
 </div>
 <!-- end of story generator -->
+ 
 <!-- Load indicator function -->
 <div class="flex relative items-center justify-center">
   {#if isLoading}
@@ -252,13 +229,6 @@
 </footer>
 
 <!-- End of footer -->
-
-<!-- <Typewriter>
-  <div class="flex text-center font-bold flex-col justify-center">
-    <h1  class="text-[3rem] ">WHILE YOUR HERE</h1>
-    <h1  class="text-[2rem] ">WE HOPE YOU ENJOY OUR STORIES</h1>
-  </div>
- </Typewriter> -->
 
 <style>
   .bg-gray-100 {
