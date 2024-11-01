@@ -3,6 +3,7 @@
   import { afterUpdate } from "svelte";
   import type { PageData, ActionData, SubmitFunction } from './$types';
   
+  import Banner from "$lib/storytelling-4203628_1920-removebg-preview.png"
  import { Button } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js"
   import * as Card from "$lib/components/ui/card/index.js";
@@ -132,29 +133,34 @@
 </div>
 <!-- End of load indicator function -->
 
-<!-- carousel -->
-<div class="flex items-center justify-center my-4">
-  <Carousel.Root class="px-4 md:px-20 w-full md:w-[55rem] cm:w-[26rem]"> 
+
+<!-- Carousel  -->
+<div class=" flex items-center justify-center my-4">
+  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[33rem] ">
     <Carousel.Content>
       {#each items as item, i (i)}
-        <Carousel.Item class="w-full md:basis-1/1 lg:basis-1/2"> 
-          <Card.Root>
-            <Card.Content class="flex flex-col md:flex-row items-center justify-center p-6"> 
-              <img class="w-[10rem] p-[1.3rem] md:w-[15rem]" src={item.image} alt="carousel" />
-              <div class="flex flex-col text-[0.7rem] md:text-base p-[1.2rem]">
+        <Carousel.Item class="cm:basis-1/1 md:basis-1/2 lg:basis-1/2">
+            <Card.Root>
+              <Card.Content
+                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col p-6"
+              >
+              <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
+              <div class="flex flex-col text-[0.7rem] px-[1.2rem] ">
                 <p class="text-left">{item.testimony}</p>
-                <p class="text-left text-blue-800 text-[1rem] md:text-lg font-semibold mt-2">{item.name}</p>
+                <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
                 <p class="text-left text-pink-700">{item.speaker}</p>
               </div>
-            </Card.Content>
-          </Card.Root>
+              </Card.Content>
+            </Card.Root>
         </Carousel.Item>
       {/each}
     </Carousel.Content>
     <Carousel.Previous />
     <Carousel.Next />
   </Carousel.Root>
+  
 </div>
+
 
 
 <!-- Errror handling for request -->
