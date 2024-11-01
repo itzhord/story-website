@@ -3,7 +3,6 @@
   import { afterUpdate } from "svelte";
   import type { PageData, ActionData, SubmitFunction } from './$types';
   
-  import Banner from "$lib/storytelling-4203628_1920-removebg-preview.png"
  import { Button } from "$lib/components/ui/button/index.js";
   import { Input } from "$lib/components/ui/input/index.js"
   import * as Card from "$lib/components/ui/card/index.js";
@@ -78,11 +77,11 @@
 <div class="w-100 h-[80vh] font-mono bg-[#1e272e]">
   <h1  class=" relative text-[2rem] text-white font-bold text-center top-[5.2rem]">HotStuff</h1>
   <h1 class="text-[2rem] text-white font-bold text-center relative top-[2rem] mt-7 ">Story Maker</h1>
-  <!-- <img class="mx-auto w-[50rem] relative bottom-[3rem] " src={Banner} alt="Description of Banner"/> -->
 
-  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
-  <h2 class="text-[4.5rem] text-white font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
+  <h2 class="text-[4.5rem] text-white cm:text-[2.5rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
+  <h2 class="text-[4.5rem] text-white cm:text-[3.5rem] cm:my-[30px] cm:mx-[15px] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
   <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your go-to source for creative stories</h2>
+
 </div>
 
 <!-- end of banner screen -->
@@ -133,33 +132,29 @@
 </div>
 <!-- End of load indicator function -->
 
-<div class=" flex items-center justify-center my-4">
-  <Carousel.Root class="px-20 w-[80rem]  ">
+<!-- carousel -->
+<div class="flex items-center justify-center my-4">
+  <Carousel.Root class="px-4 md:px-20 w-full md:w-[55rem] cm:w-[26rem]"> 
     <Carousel.Content>
       {#each items as item, i (i)}
-        <Carousel.Item class="md:basis-1/2 lg:basis-1/2">
-         
-            <Card.Root>
-              <Card.Content
-                class="flex  items-center justify-center p-6"
-              >
-              <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
-              <div class="flex flex-col text-[0.7rem] p-[1.2rem] ">
+        <Carousel.Item class="w-full md:basis-1/1 lg:basis-1/2"> 
+          <Card.Root>
+            <Card.Content class="flex flex-col md:flex-row items-center justify-center p-6"> 
+              <img class="w-[10rem] p-[1.3rem] md:w-[15rem]" src={item.image} alt="carousel" />
+              <div class="flex flex-col text-[0.7rem] md:text-base p-[1.2rem]">
                 <p class="text-left">{item.testimony}</p>
-                <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
+                <p class="text-left text-blue-800 text-[1rem] md:text-lg font-semibold mt-2">{item.name}</p>
                 <p class="text-left text-pink-700">{item.speaker}</p>
               </div>
-              </Card.Content>
-            </Card.Root>
+            </Card.Content>
+          </Card.Root>
         </Carousel.Item>
       {/each}
     </Carousel.Content>
     <Carousel.Previous />
     <Carousel.Next />
   </Carousel.Root>
-  
 </div>
-
 
 
 <!-- Errror handling for request -->
@@ -229,6 +224,7 @@
 </footer>
 
 <!-- End of footer -->
+
 
 <style>
   .bg-gray-100 {
