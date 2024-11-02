@@ -18,13 +18,14 @@ function toggleMenu() {
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <a href="/" class="text-white text-2xl font-bold">HotStuff</a>
   
-    <button 
-    class="md:hidden text-white focus:outline-none" 
-    on:click={toggleMenu}
-    aria-label="{isMenuOpen ? 'Close Menu' : 'Open Menu'}" 
+      <button 
+      class="md:hidden text-white focus:outline-none" 
+      on:click={toggleMenu}
+      aria-label="{isMenuOpen ? 'Close Menu' : 'Open Menu'}" 
     > 
-    <i class="{isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'} fa-lg"></i>
+      <i class="{isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'} fa-lg"></i>
     </button>
+    
   
       <ul class="{isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 bg-[#1e272e] md:bg-transparent w-full md:w-auto"> 
         <li><a href="/" class="text-gray-300 hover:text-white block px-4 py-2">Home</a></li>

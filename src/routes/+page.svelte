@@ -76,13 +76,16 @@
 
 <!-- Banner Screen -->
 <div class="w-100 h-[80vh] font-mono bg-[#1e272e]">
-  <h1  class=" relative text-[2rem] text-white font-bold text-center top-[5.2rem]">HotStuff</h1>
-  <h1 class="text-[2rem] text-white font-bold text-center relative top-[2rem] mt-7 ">Story Maker</h1>
-
-  <h2 class="text-[4.5rem] text-white cm:text-[2.5rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
-  <h2 class="text-[4.5rem] text-white cm:text-[3.5rem] cm:my-[30px] cm:mx-[15px] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
-  <h2  class="text-[1.5] text-white font-bold text-center relative top-[1rem] ">Your go-to source for creative stories</h2>
-
+ 
+  <div class="relative  top-[5.2rem] cm:top-[7.5rem]">
+     <h1  class=" text-[2rem] text-white font-bold text-center   ">HotStuff</h1>
+  <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 ">Story Maker</h1>
+</div>
+<div class="relative top-[3rem] md:text-[3.5rem] md:px-[1rem] ">
+  <h2 class="text-[4.5rem] text-white  cm:text-[2.5rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
+  <h2 class="text-[4.5rem] text-white  cm:text-[3.5rem] cm:mt-[1rem] md:mt-[1rem] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
+</div>
+<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[6rem] top-[9rem] ">Your go-to source for creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -136,7 +139,7 @@
 
 <!-- Carousel  -->
 <div class=" flex items-center justify-center my-4">
-  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[33rem] ">
+  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[25rem] ">
     <Carousel.Content>
       {#each items as item, i (i)}
         <Carousel.Item class="cm:basis-1/1 md:basis-1/2 lg:basis-1/2">
