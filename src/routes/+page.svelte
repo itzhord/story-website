@@ -83,9 +83,9 @@
 </div>
 <div class="relative flex flex-col text-center mt-[5rem] text-white lg:text-[4.5rem] top-[3rem] md:px-[1rem] md:text-[4.5rem] md:leading-[4rem] cm:text-[2rem] cm:leading-[2rem] font-semibold leading-[4rem] cm:p-[1rem] cm:mt-[3rem]">
   <h2>The #1 Story Maker</h2>
-  <h2>For readers in the entire space</h2>
+  <h2>For readers In The Entire Space</h2>
 </div>
-<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[4rem] top-[9rem] cm:text-[0.8rem]  md:text-[1.5rem] ">Your go-to source for creative stories</h2>
+<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[4rem] top-[9rem] cm:text-[0.8rem]  md:text-[1.5rem] ">Your Go-To Source For Creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -235,8 +235,4 @@
 <!-- End of footer -->
 
 
-<style>
-
-  
-</style>
-
+<style></style>
