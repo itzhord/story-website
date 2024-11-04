@@ -75,17 +75,17 @@
 
 
 <!-- Banner Screen -->
-<div class="w-100 h-[80vh] font-mono bg-[#1e272e] cm:w-[100%] md:h-[100vh] relative">
+<div class="w-100 h-[80vh] font-mono bg-[#1e272e] cm:w-[100%]  relative">
  
-  <div class="relative  top-[5.2rem] cm:top-[7.5rem] ">
-     <h1  class=" text-[2rem] text-white font-bold text-center cm:text-[1.2rem] md:text-[3.5rem] ">HotStuff</h1>
-  <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 cm:text-[1.2rem] cm:top-[-2.7rem] ">Story Maker</h1>
+  <div class="relative  top-[5.2rem] cm:top-[7.5rem]">
+     <h1  class=" text-[2rem] text-white font-bold text-center ">HotStuff</h1>
+  <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 ">Story Maker</h1>
 </div>
-<div class="relative text-[4.5rem] top-[3rem] md:text-[3.5rem] cm:text-[2rem] cm:leading-[2rem] md:px-[1rem] cm:px-[1.5rem]">
-  <h2 class=" text-white cm:bottom-[2rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
-  <h2 class=" text-white   cm:mt-[3rem] md:mt-[1rem] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
+<div class="relative flex flex-col text-center mt-[5rem] text-white lg:text-[4.5rem] top-[3rem] md:px-[1rem] md:text-[4.5rem] cm:text-[2rem] cm:leading-[2rem] font-semibold leading-[4rem] cm:p-[1rem] cm:mt-[3rem]">
+  <h2>The #1 Story Maker</h2>
+  <h2>For readers in the entire space</h2>
 </div>
-<h2  class="text-[1.5] text-white font-bold text-center cm:text-[0.9rem] relative cm:top-[6rem] top-[9rem] ">Your go-to source for creative stories</h2>
+<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[4rem] top-[9rem] cm:text-[0.8rem] ">Your go-to source for creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -96,7 +96,7 @@
 
   <div class="flex flex-col gap-4">
     <form use:enhance={handleSubmit} action="?/tell_story" method="POST">
-      <label for="story-prompt" class="block text-gray-700 font-bold mb-2">Enter your story prompt:</label>
+      <label for="story-prompt" class="block text-gray-700 font-bold mb-2 cm:text-[0.8rem]">Enter your story prompt:</label>
       <textarea
         bind:value={prompt}
         id="story-prompt"
@@ -145,9 +145,9 @@
         <Carousel.Item class="cm:basis-1/1 md:basis-1/2 lg:basis-1/2">
             <Card.Root>
               <Card.Content
-                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col cm:p-[0.5rem] p-6"
+                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col p-6"
               >
-              <img class="w-[10rem] cm:w-[7rem] p-[1.3rem]" src={item.image} alt="carousel" />
+              <img class="w-[10rem] cm:w-[5rem] p-[1.3rem]" src={item.image} alt="carousel" />
               <div class="flex flex-col text-[0.7rem] px-[1.2rem] ">
                 <p class="text-left cm:text-[0.5rem] ">{item.testimony}</p>
                 <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
@@ -182,11 +182,11 @@
 
 <footer class="bg-gray-800 text-white py-4 mt-16">
 
-  <form class="flex w-full max-w-sm items-center my-[1rem] space-x-2 m-auto">
+  <form class="flex w-full max-w-sm items-center my-[1rem] cm:p-[1.5rem] space-x-2 m-auto">
     <Input class="text-black" type="email" placeholder="email" />
     <Button type="submit">Subscribe</Button>
   </form>
-  <div class="container mx-auto text-[0.9rem] grid mt-10 grid-cols-1 md:grid-cols-4 gap-8">
+  <div class="container mx-auto text-[0.9rem] cm:text-[0.8rem] grid mt-10 grid-cols-1 md:grid-cols-4 gap-8">
     <div class="mb-4 md:mb-0">
       <a href="/" class="text-xl font-bold">HotStuff</a>
       <p class="text-sm mt-2">Your go-to source for creative stories.</p>
@@ -236,39 +236,7 @@
 
 
 <style>
-  .bg-gray-100 {
-    background-color: theme('colors.gray.100'); /* Use a theme-aware color */
-  }
 
-  /* Responsive Styling */
-  @media (min-width: 768px) { /* Use min-width for mobile-first approach */
-    .container {
-      padding: 2rem; /* Maintain consistent padding on larger screens */
-    }
-  }
-
-
-  /* Default styles (mobile-first) */
-  .container {
-    padding: 1rem; /* Smaller padding on mobile */
-  }
-
-  .flex-col {
-    display: flex;  /* Ensure flexbox is enabled */
-    flex-direction: column; /* Default to column on mobile */
-  }
-
-  @media (min-width: 768px) {
-    .flex-col {
-      flex-direction: row; /* Switch to row on larger screens */
-    }
-  }
-
-  textarea {
-    min-height: 10rem; /* Use min-height for flexibility */
-    width: 100%;       /* Ensure textarea takes full width */
-    max-width: 100%;   /* Prevent overflow on larger screens*/
-    box-sizing: border-box; /* Include padding and border in the width */
-  }
+  
 </style>
 
