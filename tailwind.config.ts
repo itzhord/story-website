@@ -14,7 +14,7 @@ const config: Config = {
 			xl: '1280px',
 			'2xl': '1536px',
 			// Add your custom breakpoint
-			'cm': '500px',
+			'cm': '320px',
 		  },
 		container: {
 			center: true,

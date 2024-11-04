@@ -75,17 +75,17 @@
 
 
 <!-- Banner Screen -->
-<div class="w-100 h-[80vh] font-mono bg-[#1e272e]">
+<div class="w-100 h-[80vh] font-mono bg-[#1e272e] cm:w-[100%] md:h-[100vh] relative">
  
-  <div class="relative  top-[5.2rem] cm:top-[7.5rem]">
-     <h1  class=" text-[2rem] text-white font-bold text-center   ">HotStuff</h1>
-  <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 ">Story Maker</h1>
+  <div class="relative  top-[5.2rem] cm:top-[7.5rem] ">
+     <h1  class=" text-[2rem] text-white font-bold text-center cm:text-[1.2rem] md:text-[3.5rem] ">HotStuff</h1>
+  <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 cm:text-[1.2rem] cm:top-[-2.7rem] ">Story Maker</h1>
 </div>
-<div class="relative top-[3rem] md:text-[3.5rem] md:px-[1rem] ">
-  <h2 class="text-[4.5rem] text-white  cm:text-[2.5rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
-  <h2 class="text-[4.5rem] text-white  cm:text-[3.5rem] cm:mt-[1rem] md:mt-[1rem] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
+<div class="relative text-[4.5rem] top-[3rem] md:text-[3.5rem] cm:text-[2rem] cm:leading-[2rem] md:px-[1rem] cm:px-[1.5rem]">
+  <h2 class=" text-white cm:bottom-[2rem] font-bold text-center relative top-[4.5rem] mt-7 " > The #1 Story Maker</h2>
+  <h2 class=" text-white   cm:mt-[3rem] md:mt-[1rem] font-bold text-center relative top-[2rem] "> For Readers in the entire space</h2>
 </div>
-<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[6rem] top-[9rem] ">Your go-to source for creative stories</h2>
+<h2  class="text-[1.5] text-white font-bold text-center cm:text-[0.9rem] relative cm:top-[6rem] top-[9rem] ">Your go-to source for creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -139,17 +139,17 @@
 
 <!-- Carousel  -->
 <div class=" flex items-center justify-center my-4">
-  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[25rem] ">
+  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[15rem] ">
     <Carousel.Content>
       {#each items as item, i (i)}
         <Carousel.Item class="cm:basis-1/1 md:basis-1/2 lg:basis-1/2">
             <Card.Root>
               <Card.Content
-                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col p-6"
+                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col cm:p-[0.5rem] p-6"
               >
-              <img class="w-[10rem] p-[1.3rem]" src={item.image} alt="carousel" />
+              <img class="w-[10rem] cm:w-[7rem] p-[1.3rem]" src={item.image} alt="carousel" />
               <div class="flex flex-col text-[0.7rem] px-[1.2rem] ">
-                <p class="text-left">{item.testimony}</p>
+                <p class="text-left cm:text-[0.5rem] ">{item.testimony}</p>
                 <p class="text-left text-blue-800 text-[1rem]  relative top-[0.4rem]">{item.name}</p>
                 <p class="text-left text-pink-700">{item.speaker}</p>
               </div>
@@ -237,21 +237,38 @@
 
 <style>
   .bg-gray-100 {
-    background-color: #f5f5f5;
+    background-color: theme('colors.gray.100'); /* Use a theme-aware color */
   }
 
   /* Responsive Styling */
-  @media (max-width: 768px) {
+  @media (min-width: 768px) { /* Use min-width for mobile-first approach */
     .container {
-      padding: 2rem; /* Adjust padding as needed */
-    }
-
-    .flex-col {
-      flex-direction: column; /* Stack elements vertically */
-    }
-
-    textarea {
-      height: 10rem; /* Adjust height as needed */
+      padding: 2rem; /* Maintain consistent padding on larger screens */
     }
   }
+
+
+  /* Default styles (mobile-first) */
+  .container {
+    padding: 1rem; /* Smaller padding on mobile */
+  }
+
+  .flex-col {
+    display: flex;  /* Ensure flexbox is enabled */
+    flex-direction: column; /* Default to column on mobile */
+  }
+
+  @media (min-width: 768px) {
+    .flex-col {
+      flex-direction: row; /* Switch to row on larger screens */
+    }
+  }
+
+  textarea {
+    min-height: 10rem; /* Use min-height for flexibility */
+    width: 100%;       /* Ensure textarea takes full width */
+    max-width: 100%;   /* Prevent overflow on larger screens*/
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
 </style>
+
