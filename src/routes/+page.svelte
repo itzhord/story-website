@@ -75,17 +75,17 @@
 
 
 <!-- Banner Screen -->
-<div class="w-100 h-[80vh] font-mono bg-[#1e272e] cm:w-[100%]  relative">
+<div class="w-100 h-[80vh] font-mono bg-[#1e272e] cm:w-100  relative">
  
   <div class="relative  top-[5.2rem] cm:top-[7.5rem]">
      <h1  class=" text-[2rem] text-white font-bold text-center ">HotStuff</h1>
   <h1 class="text-[2rem] text-white font-bold text-center relative top-[-3rem] mt-7 ">Story Maker</h1>
 </div>
-<div class="relative flex flex-col text-center mt-[5rem] text-white lg:text-[4.5rem] top-[3rem] md:px-[1rem] md:text-[4.5rem] cm:text-[2rem] cm:leading-[2rem] font-semibold leading-[4rem] cm:p-[1rem] cm:mt-[3rem]">
+<div class="relative flex flex-col text-center mt-[5rem] text-white lg:text-[4.5rem] top-[3rem] md:px-[1rem] md:text-[4.5rem] md:leading-[4rem] cm:text-[2rem] cm:leading-[2rem] font-semibold leading-[4rem] cm:p-[1rem] cm:mt-[3rem]">
   <h2>The #1 Story Maker</h2>
   <h2>For readers in the entire space</h2>
 </div>
-<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[4rem] top-[9rem] cm:text-[0.8rem] ">Your go-to source for creative stories</h2>
+<h2  class="text-[1.5] text-white font-bold text-center relative cm:top-[4rem] top-[9rem] cm:text-[0.8rem]  md:text-[1.5rem] ">Your go-to source for creative stories</h2>
 </div>
 
 <!-- end of banner screen -->
@@ -139,13 +139,13 @@
 
 <!-- Carousel  -->
 <div class=" flex items-center justify-center my-4">
-  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[15rem] ">
+  <Carousel.Root class=" lg:w-[80rem] cm:mx-40 md:w-[67rem] cm:w-[13rem] ">
     <Carousel.Content>
       {#each items as item, i (i)}
         <Carousel.Item class="cm:basis-1/1 md:basis-1/2 lg:basis-1/2">
             <Card.Root>
               <Card.Content
-                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col p-6"
+                class="flex lg:flex-row md:flex-col items-center justify-center cm:flex-col cm:p-[0.2rem] p-6"
               >
               <img class="w-[10rem] cm:w-[5rem] p-[1.3rem]" src={item.image} alt="carousel" />
               <div class="flex flex-col text-[0.7rem] px-[1.2rem] ">
